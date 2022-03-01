@@ -6,17 +6,19 @@
   home.packages = with pkgs; [
     # cli tools
     gh
+    exa
     bat
     wget
     git
     lazygit
+    vifm
 
-    # nix stuff
-    update-nix-fetchgit
+    onefetch
+    neofetch
 
     # docker stuff
     docker
-    docker-compose
+    # docker-compose # broken
 
     # video/audio stuff
     yt-dlp    
