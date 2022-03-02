@@ -21,9 +21,11 @@
       ./hm/default-home.nix
       ./hm/direnv.nix
       ./hm/firefox.nix
+      ./hm/font.nix
       ./hm/git.nix
       ./hm/nvim.nix
       ./hm/starship.nix
+      ./hm/xmonad
       ./hm/yabai-skhd.nix
       ./hm/zsh.nix
     ];
@@ -33,7 +35,7 @@
 
     sharedOverlays = [ nur.overlay ];
 
-    channels."unstable" = {
+    channels.nixpkgs = {
       input = nixpkgs;
       config = {
         allowUnfree = true;
@@ -41,14 +43,46 @@
     };
 
     hostDefaults = {
-      channelName = "unstable";
       extraArgs = { inherit utils inputs; };
+    };
+
+    hosts.nixos = {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/nixos/configuration.nix
+        self.homeModules.font
+        home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.extraSpecialArgs = {
+            colorscheme = self.colorscheme;
+            colorscheme-name = self.colorscheme-name;
+          };
+
+          home-manager.users.builditluc = { pkgs, ... }:
+          {
+            imports = with self.homeModules; [
+              default-home
+              nixvim.homeManagerModules.nixvim
+
+              alacritty
+              direnv
+              firefox
+              git
+              nvim
+              starship
+              xmonad
+              zsh
+            ];
+          };
+        }
+      ];
     };
 
     hosts.macbook = {
       system = "x86_64-darwin";
       modules = [
         ./hosts/macbook/configuration.nix
+        self.homeModules.font
         home-manager.darwinModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
@@ -74,6 +108,9 @@
             ];
 
             programs.firefox.package = (pkgs.callPackage ./custom-pkgs/firefox { });
+            xdg.configFile."nix/nix.conf".text = ''
+              experimental-features = nix-command flakes
+            '';
           };
         }
       ];

@@ -1,5 +1,6 @@
 { config, pkgs, colorscheme-name, nixvim, ... }:
 {
+  home.packages = [ pkgs.rnix-lsp ];
   programs.nixvim = {
     enable = true;
     package = pkgs.neovim-unwrapped;

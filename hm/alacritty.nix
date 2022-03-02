@@ -82,7 +82,7 @@
         shape = "Block";
         blinking = "Off";
       };
-      shell.program = "/bin/zsh";
+      shell.program = "zsh";
     };
   };
 }
