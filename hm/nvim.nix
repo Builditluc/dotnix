@@ -1,6 +1,12 @@
 { config, pkgs, colorscheme-name, nixvim, ... }:
 {
-  home.packages = [ pkgs.rnix-lsp ];
+  home.packages = with pkgs; [ 
+    rnix-lsp 
+    pyright
+    rust-analyzer
+
+    gcc
+  ];
   programs.nixvim = {
     enable = true;
     package = pkgs.neovim-unwrapped;

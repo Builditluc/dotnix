@@ -26,7 +26,6 @@
     zplug = {
       enable = true;
       plugins = [
-        { name = "MichaelAquilina/zsh-auto-notify"; }
         { name = "desyncr/auto-ls"; }
         { name = "zsh-users/zsh-autosuggestions"; }
       ];
