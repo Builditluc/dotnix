@@ -83,6 +83,7 @@
         blinking = "Off";
       };
       shell.program = "zsh";
+      env."LC_ALL" = "en_US.UTF-8";
     };
   };
 }
