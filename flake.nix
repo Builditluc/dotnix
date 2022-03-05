@@ -24,6 +24,7 @@
       ./hm/font.nix
       ./hm/git.nix
       ./hm/nvim.nix
+      ./hm/vifm.nix
       ./hm/starship.nix
       ./hm/xmonad
       ./hm/yabai-skhd.nix
@@ -102,6 +103,7 @@
               firefox
               git
               nvim
+              vifm
               starship
               yabai-skhd
               zsh
