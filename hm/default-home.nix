@@ -12,6 +12,7 @@
     git
     lazygit
     vifm
+    btop
 
     onefetch
     neofetch

@@ -22,6 +22,7 @@
       ./hm/direnv.nix
       ./hm/firefox.nix
       ./hm/font.nix
+      ./hm/kitty.nix
       ./hm/git.nix
       ./hm/nvim.nix
       ./hm/vifm.nix
@@ -101,6 +102,7 @@
               alacritty
               direnv
               firefox
+              kitty
               git
               nvim
               vifm

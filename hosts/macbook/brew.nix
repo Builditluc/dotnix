@@ -9,8 +9,6 @@
       "homebrew/core" 
     ];
     brews = [
-      "python@3.10" 
-      "bpytop"
       "lolcat"
     ];
     casks = [
