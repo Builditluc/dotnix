@@ -20,6 +20,7 @@
       ./hm/alacritty.nix
       ./hm/default-home.nix
       ./hm/direnv.nix
+      ./hm/eww
       ./hm/firefox.nix
       ./hm/font.nix
       ./hm/kitty.nix
@@ -28,6 +29,7 @@
       ./hm/vifm.nix
       ./hm/starship.nix
       ./hm/xmonad
+      ./hm/xmobar.nix
       ./hm/yabai-skhd.nix
       ./hm/zsh.nix
     ];
@@ -100,6 +102,7 @@
 
               alacritty
               direnv
+              eww
               firefox
               git
               nvim
