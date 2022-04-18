@@ -80,6 +80,38 @@
       ];
     };
 
+    hosts.prlnix = {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/prlnix/configuration.nix
+        self.homeModules.font
+        home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.extraSpecialArgs = {
+            colorscheme = self.colorscheme;
+            colorscheme-name = self.colorscheme-name;
+          };
+
+          home-manager.users.builditluc = { pkgs, ... }:
+          {
+            imports = with self.homeModules; [
+              default-home
+              nixvim.homeManagerModules.nixvim
+
+              alacritty
+              direnv
+              firefox
+              git
+              nvim
+              starship
+              xmonad
+              zsh
+            ];
+          };
+        }
+      ];
+    };
+
     hosts.macbook = {
       system = "x86_64-darwin";
       modules = [
