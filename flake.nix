@@ -102,12 +102,12 @@
 
               alacritty
               direnv
-              eww
               firefox
               git
               nvim
               starship
               xmonad
+              xmobar
               zsh
             ];
           };
