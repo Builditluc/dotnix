@@ -13,6 +13,6 @@ myConfig = def
     { modMask = mod4Mask
     }
   `additionalKeysP`
-    [ ("M-S-<Return>" , spawn "alacritty" )
+    [ ("M-S-<Return>" , spawn "alacritty --command zsh" )
     , ("M-S-f"        , spawn "firefox"   )
     ]

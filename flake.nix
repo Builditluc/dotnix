@@ -105,6 +105,7 @@
               firefox
               git
               nvim
+              vifm
               starship
               xmonad
               xmobar
