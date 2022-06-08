@@ -138,12 +138,10 @@
               alacritty
               direnv
               firefox
-              kitty
               git
               nvim
               vifm
               starship
-              yabai-skhd
               zsh
             ];
 
