@@ -25,12 +25,31 @@
       cmp-nvim-lsp.enable = true;
       typst-vim.enable = true;
 
+      fidget.enable = true;
+
       lsp.enable = true;
+      lsp.keymaps.lspBuf = {
+        K = "hover";
+        gD = "references";
+        gd = "definition";
+        gi = "implementation";
+        gt = "type_definition";
+        "=" = "format";
+      };
       lsp.servers = {
         nixd.enable = true;
         rust-analyzer.enable = true;
         typst-lsp.enable = true;
+        pyright.enable = true;
       };
+
+      rust-tools.enable = true;
+
+      telescope.enable = true;
+      telescope.extensions.fzf-native.enable = true;
+
+      treesitter.enable = true;
+      treesitter.indent = true;
 
       nvim-cmp = {
         enable = true;
@@ -56,5 +75,8 @@
         '';
       };
     };
+
+    keymaps = [
+    ];
   };
 }
