@@ -5,6 +5,7 @@
 
   programs.nixvim = {
     enable = true;
+    globals.mapleader = " ";
     options = {
       number = true;
       relativenumber = true;
@@ -20,9 +21,14 @@
     colorschemes.gruvbox.enable = true;
     colorschemes.gruvbox.contrastDark = "hard";
 
+    extraPlugins = with pkgs.vimPlugins; [
+      ultisnips
+    ];
+
     plugins = {
       nvim-autopairs.enable = true;
       cmp-nvim-lsp.enable = true;
+      cmp-nvim-ultisnips.enable = true;
       typst-vim.enable = true;
 
       fidget.enable = true;
@@ -34,6 +40,8 @@
         gd = "definition";
         gi = "implementation";
         gt = "type_definition";
+        "<leader>r" = "rename";
+        "<leader>a" = "code_action";
         "=" = "format";
       };
       lsp.servers = {
@@ -53,6 +61,7 @@
 
       nvim-cmp = {
         enable = true;
+        preselect = "Item";
         sources = [
           { name = "nvim_lsp"; }
           { name = "path"; }
@@ -73,10 +82,14 @@
           return vim_item
         end
         '';
+        snippet.expand = "ultisnips";
       };
     };
 
     keymaps = [
+      { action = "<cmd>Telescope find_files<CR>"; key = "<leader>f"; mode = "n"; }
+      { action = "<cmd>Telescope lsp_document_symbols<CR>"; key = "<leader>s"; mode = "n"; }
+      { action = "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>"; key = "<leader>S"; mode = "n"; }
     ];
   };
 }
