@@ -4,5 +4,6 @@
     ./gnome
     ./git
     ./direnv.nix
+    ./alacritty.nix
   ];
 }

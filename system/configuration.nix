@@ -13,8 +13,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelParams = [ "mem_sleep_default=deep" ];
-
   boot.initrd.luks.devices."luks-8f57f477-cd2b-400d-9bb6-c2191628ceaa".device = "/dev/disk/by-uuid/8f57f477-cd2b-400d-9bb6-c2191628ceaa";
   networking.hostName = "ash"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -34,9 +32,6 @@
 
   # Enable thermal data
   services.thermald.enable = true;
-
-  # Enable fingerprint support
-  services.fprintd.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -103,6 +98,8 @@
   environment.systemPackages = with pkgs; [
     vim
     git
+    bat
+    wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
