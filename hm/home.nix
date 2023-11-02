@@ -17,7 +17,6 @@
     btop
     typst
     typst-live
-    gh
     # Thunderbolt System Settings Panel for Plasma
     plasma5Packages.plasma-thunderbolt
   ];
