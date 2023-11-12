@@ -19,5 +19,8 @@
     typst-live
     # Thunderbolt System Settings Panel for Plasma
     plasma5Packages.plasma-thunderbolt
+    enpass
+    prismlauncher
+    peaclock
   ];
 }
