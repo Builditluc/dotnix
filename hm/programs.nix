@@ -5,5 +5,6 @@
     ./git
     ./direnv.nix
     ./alacritty.nix
+    ./zellij.nix
   ];
 }
