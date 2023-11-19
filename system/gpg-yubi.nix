@@ -5,6 +5,7 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
+    pinentryFlavor = "curses";
   };
 
   programs.ssh.startAgent = false;
@@ -18,7 +19,6 @@
   services.udev.packages = [ pkgs.yubikey-personalization ];
 
   hardware.gpgSmartcards.enable = true;
-
 
   # disable gnome keyring
   services.gnome.gnome-keyring.enable = lib.mkForce false;
