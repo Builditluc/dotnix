@@ -3,6 +3,7 @@
   programs.alacritty.enable = true;
   programs.alacritty.settings = {
     cursor.shape = "block";
+    shell.program = "zellij";
 
     colors.primary = {
       background = "0x1d2021";
