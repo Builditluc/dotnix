@@ -31,7 +31,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/settings-daemon/plugins/power" = {
-      power-button-action = "hibernate";
+      power-button-action = "suspend";
     };
 
     "org/gnome/nautilus/preferences" = {
@@ -44,6 +44,8 @@ with lib.hm.gvariant;
       enabled-extensions = [ 
         "dash-to-panel@jderose9.github.com" 
         "gtk4-ding@smedius.gitlab.com"
+        "Vitals@CoreCoding.com"
+        "gTile@vibou"
       ];
       favorite-apps= [
         "org.gnome.Nautilus.desktop"
@@ -91,6 +93,10 @@ with lib.hm.gvariant;
       show-trash = false;
       show-volumes = false;
       add-volumes-opposite = false;
+    };
+
+    "org/gnome/shell/extensions/gtile" = {
+      grid-sizes = "4x1, 3x1, 2x1, 4x4";
     };
   };
 }
