@@ -22,5 +22,6 @@
     enpass
     prismlauncher
     peaclock
+    calibre
   ];
 }
