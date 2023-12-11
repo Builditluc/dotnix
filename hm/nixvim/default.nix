@@ -27,7 +27,12 @@
 
     extraPlugins = with pkgs.vimPlugins; [
       ultisnips
+      go-nvim
     ];
+
+    extraConfigLua = ''
+      require("go").setup {}
+    '';
 
     plugins = {
       nvim-autopairs.enable = true;
@@ -68,6 +73,7 @@
         rust-analyzer.enable = true;
         typst-lsp.enable = true;
         pyright.enable = true;
+        gopls.enable = true;
       };
 
       rust-tools.enable = true;
