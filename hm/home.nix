@@ -17,6 +17,7 @@
     btop
     typst
     typst-live
+    mpv
     # Thunderbolt System Settings Panel for Plasma
     plasma5Packages.plasma-thunderbolt
     enpass
