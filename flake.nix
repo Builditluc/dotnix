@@ -13,19 +13,23 @@
 
   outputs = { self, nixpkgs, home-manager, nixvim }@inputs: {
     nixosModules = {
-      gnome = import ./system/gnome.nix;
+      wm = {
+        gnome = import ./system/wm/gnome.nix;
+      };
       gpg-yubi = import ./system/gpg-yubi.nix;
       steam = import ./system/steam.nix;
       system = import ./system/configuration.nix;
     };
+
     nixosConfigurations = {
       ash = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = with self.nixosModules; [
-          gnome
           gpg-yubi
           steam
           system
+
+          wm.gnome
 
           home-manager.nixosModules.home-manager
           {

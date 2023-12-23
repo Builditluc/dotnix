@@ -7,5 +7,7 @@
     gtk4-desktop-icons-ng-ding
     gtile
     vitals
+  ] ++ [
+    pkgs.plasma5Packages.plasma-thunderbolt
   ];
 }

@@ -1,6 +1,10 @@
 { lib, config, pkgs, ... }:
 {
-  environment.systemPackages = [ pkgs.gnupg pkgs.yubikey-personalization pkgs.yubikey-manager ];
+  environment.systemPackages = with pkgs; [ 
+    gnupg 
+    yubikey-personalization 
+    yubikey-manager 
+  ];
 
   programs.gnupg.agent = {
     enable = true;

@@ -1,7 +1,12 @@
 { inputs, config, pkgs, ... }:
 {
   imports = [
-    ./programs.nix
+    ./nixvim
+    ./gnome
+    ./git
+    ./direnv
+    ./alacritty
+    ./zellij
   ];
 
   #home.username = "buildituc";
@@ -13,13 +18,11 @@
 
   home.packages = with pkgs; [
     librewolf
-    kate
     btop
     typst
     typst-live
+    tree
     mpv
-    # Thunderbolt System Settings Panel for Plasma
-    plasma5Packages.plasma-thunderbolt
     enpass
     prismlauncher
     peaclock
