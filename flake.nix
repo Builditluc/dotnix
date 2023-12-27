@@ -15,6 +15,7 @@
     nixosModules = {
       wm = {
         gnome = import ./system/wm/gnome.nix;
+        xmonad = import ./system/wm/xmonad.nix;
       };
       gpg-yubi = import ./system/gpg-yubi.nix;
       steam = import ./system/steam.nix;

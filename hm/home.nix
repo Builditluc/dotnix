@@ -2,11 +2,14 @@
 {
   imports = [
     ./nixvim
-    ./gnome
     ./git
     ./direnv
     ./alacritty
     ./zellij
+
+
+    ./gnome
+    #./xmonad
   ];
 
   #home.username = "buildituc";
