@@ -57,6 +57,8 @@
 
       fidget.enable = true;
 
+      project-nvim.enable = true;
+
       lsp.enable = true;
       lsp.keymaps.lspBuf = {
         K = "hover";
@@ -80,6 +82,7 @@
 
       telescope.enable = true;
       telescope.extensions.fzf-native.enable = true;
+      telescope.extensions.project-nvim.enable = true;
 
       treesitter.enable = true;
       treesitter.indent = true;
@@ -117,6 +120,7 @@
       { action = "<cmd>Telescope find_files<CR>"; key = "<leader>f"; mode = "n"; }
       { action = "<cmd>Telescope lsp_document_symbols<CR>"; key = "<leader>s"; mode = "n"; }
       { action = "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>"; key = "<leader>S"; mode = "n"; }
+      { action = "<cmd>Telescope projects<CR>"; key = "<leader>p"; mode = "n"; }
     ];
   };
 }
