@@ -69,6 +69,7 @@ with lib.hm.gvariant;
       panel-element-positions = ''
         {"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}
       '';
+
       panel-lengths = ''
         {"0":100}
       '';
@@ -97,6 +98,15 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/extensions/gtile" = {
       grid-sizes = "4x1, 3x1, 2x1, 4x4";
+      window-margin = 10;
+
+      preset-resize-1 = "['<Super>!]";
+      preset-resize-2 = "['<Super>@]";
+      preset-resize-3 = "['<Super>#]";
+
+      resize1 = "4x1 2:1 3:1, 1:1 1:1, 4:1 4:1"; # developer resize
+      resize2 = "2x1 1:1 1:1, 2:1 2:1"; # screen halves
+      resize3 = "3x1 1:1 1:1, 1:1 2:1, 2:1 2:1, 2:1 3:1, 3:1 3:1"; # screen thirds
     };
   };
 }
