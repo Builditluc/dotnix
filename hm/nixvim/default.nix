@@ -3,10 +3,6 @@
 {
   imports = [ inputs.nixvim.homeManagerModules.nixvim ];
 
-  home.packages = with pkgs; [
-    unzip # for tabnine-nvim
-  ];
-
   programs.nixvim = {
     enable = true;
     globals.mapleader = " ";
@@ -28,6 +24,7 @@
     extraPlugins = with pkgs.vimPlugins; [
       ultisnips
       go-nvim
+      vim-wakatime
     ];
 
     extraConfigLua = ''
@@ -39,21 +36,6 @@
       cmp-nvim-lsp.enable = true;
       cmp-nvim-ultisnips.enable = true;
       typst-vim.enable = true;
-
-      cmp-tabnine.enable = true;
-
-      packer.enable = true;
-      packer.plugins = [
-        { 
-          name = "codota/tabnine-nvim"; 
-          run = "./dl_binaries.sh"; # unzip is required (see top)
-          config = ''require('tabnine').setup {
-            accept_keymap = "<S-Tab>",
-            debounce_ms = 500,
-            log_file_path = nil,
-          }'';
-        }
-      ];
 
       fidget.enable = true;
 
@@ -91,7 +73,6 @@
         enable = true;
         preselect = "Item";
         sources = [
-          { name = "tabnine"; }
           { name = "nvim_lsp"; }
           { name = "path"; }
           { name = "buffer"; }
@@ -103,7 +84,6 @@
         };
         formatting.format = ''function(entry, vim_item)
           local source_mapping = {
-            tabnine = "[AI]",
             nvim_lsp = "[LSP]",
             path = "[PATH]",
             buffer = "[BFR]",
