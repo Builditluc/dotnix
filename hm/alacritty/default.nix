@@ -6,6 +6,12 @@
     shell.program = "zellij";
     window.decorations = "none";
 
+    font.normal = { family = "FiraCode Nerd Font Mono"; };
+    font.bold = { family = "FiraCode Nerd Font Mono"; style = "bold"; };
+    font.italic = { family = "FiraCode Nerd Font Mono"; style = "italic"; };
+    font.bold_italic = { family = "FiraCode Nerd Font Mono"; style = "bold italic"; };
+    font.size = 11;
+
     colors.primary = {
       background = "0x1d2021";
       foreground = "0xebdbb2";

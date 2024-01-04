@@ -85,6 +85,8 @@
     wget
   ];
 
+  fonts.packages = [ (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; }) ];
+
   system.stateVersion = "23.05";
 
 }
