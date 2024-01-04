@@ -17,6 +17,7 @@
       scrolloff = 20;
       colorcolumn = "100";
       textwidth = 100;
+      cmdheight = 0;
     };
 
     colorschemes.gruvbox.enable = true;
@@ -87,7 +88,7 @@
           { name = "buffer"; }
         ];
         mapping = {
-          "<c-n>" = "cmp.mapping.select_next_item()";
+          "<c-k>" = "cmp.mapping.select_next_item()";
           "<c-j>" = "cmp.mapping.select_prev_item()";
           "<CR>" = "cmp.mapping.confirm({ select = true })";
         };
@@ -103,15 +104,18 @@
         '';
         snippet.expand = "ultisnips";
       };
+
+      lualine.enable = true;
+      lualine.theme = "gruvbox";
     };
 
     keymaps = [
-      { action = "<cmd>w<CR>"; key = "<leader>w"; mode = "n"; }
-      { action = "<cmd>wa<CR>"; key = "<leader>wa"; mode = "n"; }
-      { action = "<cmd>Telescope projects<CR>"; key = "<leader>p"; }
-      { action = "<cmd>Telescope lsp_document_symbols<CR>"; key = "<leader>ds"; }
-      { action = "<cmd>Telescope lsp_workspace_symbols<CR>"; key = "<leader>ws"; }
-      { action = "<cmd>Telescope find_files<CR>"; key = "<leader>ff"; }
+      { action = "<cmd>w<CR>"; key = "<leader>w"; mode = "n"; options.silent = true; }
+      { action = "<cmd>wa<CR>"; key = "<leader>wa"; mode = "n"; options.silent = true; }
+      { action = "<cmd>Telescope projects<CR>"; key = "<leader>p"; options.silent = true; }
+      { action = "<cmd>Telescope lsp_document_symbols<CR>"; key = "<leader>ds"; options.silent = true; }
+      { action = "<cmd>Telescope lsp_workspace_symbols<CR>"; key = "<leader>ws"; options.silent = true; }
+      { action = "<cmd>Telescope find_files<CR>"; key = "<leader>ff"; options.silent = true; }
     ];
   };
 }

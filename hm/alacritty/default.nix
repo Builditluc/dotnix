@@ -4,6 +4,7 @@
   programs.alacritty.settings = {
     cursor.shape = "block";
     shell.program = "zellij";
+    window.decorations = "none";
 
     colors.primary = {
       background = "0x1d2021";
