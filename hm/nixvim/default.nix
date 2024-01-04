@@ -5,6 +5,7 @@
 
   programs.nixvim = {
     enable = true;
+
     globals.mapleader = " ";
     options = {
       number = true;
@@ -25,10 +26,15 @@
       ultisnips
       go-nvim
       vim-wakatime
+      direnv-vim
     ];
 
     extraConfigLua = ''
       require("go").setup {}
+    '';
+
+    extraConfigVim = ''
+      set noshowmode
     '';
 
     plugins = {
@@ -43,24 +49,25 @@
 
       lsp.enable = true;
       lsp.keymaps.lspBuf = {
-        K = "hover";
-        gD = "references";
-        gd = "definition";
-        gi = "implementation";
-        gt = "type_definition";
-        "<leader>r" = "rename";
-        "<leader>a" = "code_action";
-        "=" = "format";
+        "<leader>gr" = "references";
+        "<leader>gd" = "definition";
+        "<leader>gi" = "implementation";
+        "<leader>gtd" = "type_definition";
+        "<leader>vh" = "hover";
+        "<leader>vr" = "rename";
+        "<leader>vca" = "code_action";
+        "<leader>vf" = "format";
       };
       lsp.servers = {
         nixd.enable = true;
+
         rust-analyzer.enable = true;
+        rust-analyzer.settings.check.command = "clippy";
+
         typst-lsp.enable = true;
         pyright.enable = true;
         gopls.enable = true;
       };
-
-      rust-tools.enable = true;
 
       telescope.enable = true;
       telescope.extensions.fzf-native.enable = true;
@@ -68,6 +75,8 @@
 
       treesitter.enable = true;
       treesitter.indent = true;
+
+      rust-tools.enable = true;
 
       nvim-cmp = {
         enable = true;
@@ -78,8 +87,8 @@
           { name = "buffer"; }
         ];
         mapping = {
-          "<c-j>" = "cmp.mapping.select_next_item()";
-          "<c-k>" = "cmp.mapping.select_prev_item()";
+          "<c-n>" = "cmp.mapping.select_next_item()";
+          "<c-j>" = "cmp.mapping.select_prev_item()";
           "<CR>" = "cmp.mapping.confirm({ select = true })";
         };
         formatting.format = ''function(entry, vim_item)
@@ -97,10 +106,12 @@
     };
 
     keymaps = [
-      { action = "<cmd>Telescope find_files<CR>"; key = "<leader>f"; mode = "n"; }
-      { action = "<cmd>Telescope lsp_document_symbols<CR>"; key = "<leader>s"; mode = "n"; }
-      { action = "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>"; key = "<leader>S"; mode = "n"; }
-      { action = "<cmd>Telescope projects<CR>"; key = "<leader>p"; mode = "n"; }
+      { action = "<cmd>w<CR>"; key = "<leader>w"; mode = "n"; }
+      { action = "<cmd>wa<CR>"; key = "<leader>wa"; mode = "n"; }
+      { action = "<cmd>Telescope projects<CR>"; key = "<leader>p"; }
+      { action = "<cmd>Telescope lsp_document_symbols<CR>"; key = "<leader>ds"; }
+      { action = "<cmd>Telescope lsp_workspace_symbols<CR>"; key = "<leader>ws"; }
+      { action = "<cmd>Telescope find_files<CR>"; key = "<leader>ff"; }
     ];
   };
 }
