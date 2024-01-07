@@ -24,6 +24,14 @@
 
   hardware.gpgSmartcards.enable = true;
 
+  # u2f PAM
+  security.pam.services = {
+    login.u2fAuth = true; # users in $HOME/.config/Yubico/u2f_keys can log in 
+    sudo.u2fAuth = true;  # with U2F Key(s)
+  };
+
+  security.pam.u2f.control = "required"; # multi factor authentication with yubikey
+
   # disable gnome keyring
   services.gnome.gnome-keyring.enable = lib.mkForce false;
 

@@ -87,6 +87,8 @@
 
   fonts.packages = [ (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; }) ];
 
+  security.pki.certificateFiles = [ ./localca.pem ];
+
   system.stateVersion = "23.05";
 
 }

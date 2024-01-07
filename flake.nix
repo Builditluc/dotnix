@@ -17,7 +17,7 @@
         gnome = import ./system/wm/gnome.nix;
         xmonad = import ./system/wm/xmonad.nix;
       };
-      gpg-yubi = import ./system/gpg-yubi.nix;
+      yubikey = import ./system/yubikey.nix;
       steam = import ./system/steam.nix;
       system = import ./system/configuration.nix;
     };
@@ -26,7 +26,7 @@
       ash = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = with self.nixosModules; [
-          gpg-yubi
+          yubikey
           steam
           system
 

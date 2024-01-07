@@ -30,5 +30,7 @@
     prismlauncher
     peaclock
     calibre
+
+    bitwarden
   ];
 }
