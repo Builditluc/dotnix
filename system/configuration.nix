@@ -5,6 +5,17 @@
     ./hardware-configuration.nix
   ];
 
+  services.logind.lidSwitch = "suspend-then-hibernate";
+  services.logind.lidSwitchDocked = "ignore";
+
+  services.logind.extraConfig = ''
+    LidSwitchIgnoreInhibited=yes
+  '';
+
+  systemd.sleep.extraConfig = ''
+    HibernateDelaySec=20m
+  '';
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -21,8 +32,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Enable thermal data
-  services.thermald.enable = true;
+  services.fwupd.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";

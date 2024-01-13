@@ -3,7 +3,7 @@
   programs.alacritty.enable = true;
   programs.alacritty.settings = {
     cursor.shape = "block";
-    shell.program = "zellij";
+    shell.program = "bash";
     window.decorations = "none";
 
     font.normal = { family = "FiraCode Nerd Font Mono"; };

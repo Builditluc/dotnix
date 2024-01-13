@@ -50,14 +50,13 @@
 
       lsp.enable = true;
       lsp.keymaps.lspBuf = {
-        "<leader>gr" = "references";
-        "<leader>gd" = "definition";
-        "<leader>gi" = "implementation";
-        "<leader>gtd" = "type_definition";
+        "gr" = "references";
+        "gd" = "definition";
+        "gi" = "implementation";
         "<leader>vh" = "hover";
         "<leader>vr" = "rename";
         "<leader>vca" = "code_action";
-        "<leader>vf" = "format";
+        "<leader>f" = "format";
       };
       lsp.servers = {
         nixd.enable = true;

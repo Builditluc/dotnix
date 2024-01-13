@@ -5,11 +5,14 @@
     ./git
     ./direnv
     ./alacritty
-    ./zellij
+    ./bash
 
+    ./waybar
+    ./wofi
+    ./dunst
 
-    ./gnome
-    #./xmonad
+    ./hyprpaper
+    ./hyprland
   ];
 
   #home.username = "buildituc";
@@ -30,6 +33,7 @@
     prismlauncher
     peaclock
     calibre
+    tor-browser
 
     bitwarden
   ];

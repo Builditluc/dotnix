@@ -9,17 +9,21 @@
 
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixvim, nixos-hardware }@inputs: {
     nixosModules = {
       wm = {
         gnome = import ./system/wm/gnome.nix;
         xmonad = import ./system/wm/xmonad.nix;
+        hyprland = import ./system/wm/hyprland.nix;
       };
       yubikey = import ./system/yubikey.nix;
       steam = import ./system/steam.nix;
       system = import ./system/configuration.nix;
+      power-management = import ./system/power-management.nix;
     };
 
     nixosConfigurations = {
@@ -29,9 +33,12 @@
           yubikey
           steam
           system
+          power-management
 
-          wm.gnome
+          #wm.gnome
+          wm.hyprland
 
+          nixos-hardware.nixosModules.framework-13th-gen-intel
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
