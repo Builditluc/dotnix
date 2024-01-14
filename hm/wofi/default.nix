@@ -12,4 +12,5 @@
     key_left = "Ctrl+h";
     key_right = "Ctrl+l";
   };
+  programs.wofi.style = (builtins.readFile ./style.css);
 }

@@ -82,5 +82,6 @@
     ];
     input.touchpad.natural_scroll = true;
     input.touchpad.clickfinger_behavior = true;
+    input.kb_options = "compose:caps";
   };
 }

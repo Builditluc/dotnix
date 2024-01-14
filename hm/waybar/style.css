@@ -1,0 +1,10 @@
+* {
+	font-size: 12px;
+	font-family: "FiraCode Nerd Font";
+	font-weight:bold;
+}
+
+window#waybar {
+	background: #111111;
+	color: #fdf6e3;
+}
