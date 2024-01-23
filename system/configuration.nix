@@ -24,11 +24,12 @@
   boot.initrd.luks.devices."luks-8f57f477-cd2b-400d-9bb6-c2191628ceaa".device = "/dev/disk/by-uuid/8f57f477-cd2b-400d-9bb6-c2191628ceaa";
   networking.hostName = "ash";
 
-  # Enable Bluetooth
-  hardware.bluetooth.enable = true;
+  # disable Bluetooth
+  hardware.bluetooth.enable = false;
 
   # Enable thunderbolt support
   services.hardware.bolt.enable = true;
+  boot.blacklistedKernelModules = [ "bluetooth" "btusb" ];
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -82,9 +83,6 @@
     description = "builditluc";
     extraGroups = [ "networkmanager" "wheel" ];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Enable flakes support
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

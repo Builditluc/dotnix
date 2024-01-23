@@ -1,6 +1,8 @@
 { inputs, config, pkgs, ... }:
 {
   imports = [
+    inputs.nixvim.homeManagerModules.nixvim
+
     ./nixvim
     ./git
     ./direnv
@@ -34,7 +36,9 @@
     peaclock
     calibre
     tor-browser
+    obsidian
 
     bitwarden
+    blightmud
   ];
 }
