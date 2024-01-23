@@ -8,6 +8,7 @@
     ./direnv
     ./alacritty
     ./bash
+    ./qutebrowser
 
     ./waybar
     ./wofi
