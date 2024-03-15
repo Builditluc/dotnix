@@ -26,7 +26,6 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    librewolf
     btop
     typst
     typst-live
@@ -34,12 +33,12 @@
     mpv
     enpass
     prismlauncher
-    peaclock
     calibre
     tor-browser
     obsidian
+    libreoffice
+    librewolf
 
     bitwarden
-    blightmud
   ];
 }

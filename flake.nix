@@ -35,6 +35,7 @@
         allowUnfree = true;
         permittedInsecurePackages = [
           "electron-25.9.0"
+          "nix-2.16.2"
         ];
       };
 

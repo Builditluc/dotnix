@@ -16,14 +16,12 @@
       colorcolumn = "100";
       textwidth = 100;
       cmdheight = 0;
-    };
+    }; 
 
-    colorschemes.gruvbox.enable = true;
-    colorschemes.gruvbox.contrastDark = "hard";
+    colorschemes.gruvbox.enable = true; 
+    colorschemes.gruvbox.settings.contrast_dark = "hard"; 
 
-    extraPlugins = with pkgs.vimPlugins; [
-      ultisnips
-      go-nvim
+    extraPlugins = with pkgs.vimPlugins; [ ultisnips go-nvim
       vim-wakatime
       direnv-vim
     ];
@@ -51,10 +49,10 @@
         "gr" = "references";
         "gd" = "definition";
         "gi" = "implementation";
-        "<leader>vh" = "hover";
-        "<leader>vr" = "rename";
-        "<leader>vca" = "code_action";
-        "<leader>f" = "format";
+        "<leader>H" = "hover";
+        "<leader>rn" = "rename";
+        "<leader>ca" = "code_action";
+        "=" = "format";
       };
       lsp.servers = {
         nixd.enable = true;
@@ -78,12 +76,6 @@
 
       nvim-cmp = {
         enable = true;
-        preselect = "Item";
-        sources = [
-          { name = "nvim_lsp"; }
-          { name = "path"; }
-          { name = "buffer"; }
-        ];
         mapping = {
           "<c-k>" = "cmp.mapping.select_next_item()";
           "<c-j>" = "cmp.mapping.select_prev_item()";
@@ -99,7 +91,6 @@
           return vim_item
         end
         '';
-        snippet.expand = "ultisnips";
       };
 
       lualine.enable = true;

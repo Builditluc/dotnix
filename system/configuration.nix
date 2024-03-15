@@ -16,6 +16,10 @@
     HibernateDelaySec=20m
   '';
 
+  # firewall
+  networking.firewall.enable = true;
+  networking.firewall.allowedTCPPorts = [ 8083 9090 ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 20;

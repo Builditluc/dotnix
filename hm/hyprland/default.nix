@@ -4,6 +4,7 @@
     brightnessctl
     playerctl
     pamixer
+    pavucontrol
   ];
 
   wayland.windowManager.hyprland.enable = true;
