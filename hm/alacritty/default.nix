@@ -2,7 +2,9 @@
 {
   programs.alacritty.enable = true;
   programs.alacritty.settings = {
-    cursor.shape = "block";
+    cursor.style.shape = "block";
+    cursor.style.blinking = "Never";
+
     shell.program = "bash";
     window.decorations = "none";
 
