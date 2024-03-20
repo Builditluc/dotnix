@@ -28,6 +28,9 @@
   boot.initrd.luks.devices."luks-8f57f477-cd2b-400d-9bb6-c2191628ceaa".device = "/dev/disk/by-uuid/8f57f477-cd2b-400d-9bb6-c2191628ceaa";
   networking.hostName = "ash";
 
+  boot.plymouth.enable = true;
+  boot.plymouth.theme = "breeze";
+
   # disable Bluetooth
   hardware.bluetooth.enable = false;
 
