@@ -38,6 +38,7 @@
     obsidian
     libreoffice
     librewolf
+    lutris
 
     bitwarden
   ];
