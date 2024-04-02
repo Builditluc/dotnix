@@ -60,6 +60,8 @@
       "$mod_SHIFT, 9, movetoworkspace, 9"
       "$mod_SHIFT, 0, movetoworkspace, 10"
 
+      "$mod, f, togglefloating"
+
       "$mod, mouse_down, workspace, e+1"
       "$mod, mouse_up,   workspace, e-1"
       ];
