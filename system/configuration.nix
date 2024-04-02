@@ -31,12 +31,13 @@
   boot.plymouth.enable = true;
   boot.plymouth.theme = "breeze";
 
-  # disable Bluetooth
-  hardware.bluetooth.enable = false;
+  # Bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = false;
+  # boot.blacklistedKernelModules = [ "bluetooth" "btusb" ];
 
   # Enable thunderbolt support
   services.hardware.bolt.enable = true;
-  boot.blacklistedKernelModules = [ "bluetooth" "btusb" ];
 
   # Enable networking
   networking.networkmanager.enable = true;
