@@ -46,6 +46,11 @@
     WIFI_PWR_ON_BAT = false; # due to WiFi drop outs
     WOL_DISABLE = true;
 
+    DEVICES_TO_DISABLE_ON_STARTUP = "bluetooth wifi wwan";
+    DEVICES_TO_DISABLE_ON_LAN_CONNECT = "wifi wwan";
+    DEVICES_TO_DISABLE_ON_WIFI_CONNECT = "wwan";
+    DEVICES_TO_DISABLE_ON_WWAN_CONNECT = "wifi";
+
     USB_AUTOSUSPEND = true;
     USB_EXCLUDE_AUDIO = true;
     USB_EXCLUDE_BTUSB = false;
