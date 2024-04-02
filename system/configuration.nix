@@ -33,7 +33,7 @@
 
   # Bluetooth
   hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = false;
+  # hardware.bluetooth.powerOnBoot = false;
   # boot.blacklistedKernelModules = [ "bluetooth" "btusb" ];
 
   # Enable thunderbolt support
