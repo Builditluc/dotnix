@@ -3,7 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-23.11";
+
     utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
     
     home-manager.url = "github:nix-community/home-manager";
@@ -41,10 +42,11 @@
 
       channels.nixpkgs = {
         input = nixpkgs;
-      };
-
-      channels.unstable = {
-        input = nixpkgs-unstable;
+        overlaysBuilder = channels: [
+          (final: prev: { 
+            unstable = nixpkgs-unstable.legacyPackages.${prev.system}; 
+          })
+        ];
       };
 
       hosts.ash = {

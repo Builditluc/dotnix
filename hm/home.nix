@@ -26,7 +26,10 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    btop
+
+    unstable.btop
+
+    #btop
     typst
     typst-live
     tree
