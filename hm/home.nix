@@ -39,6 +39,7 @@
     libreoffice
     librewolf
     lutris
+    termusic
 
     bitwarden
   ];
