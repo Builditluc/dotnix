@@ -39,7 +39,7 @@
     libreoffice
     librewolf
     lutris
-    qmmp
+    strawberry
 
     bitwarden
   ];
