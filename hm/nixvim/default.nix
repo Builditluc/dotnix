@@ -5,7 +5,7 @@
     enable = true;
 
     globals.mapleader = " ";
-    options = {
+    opts = {
       number = true;
       relativenumber = true;
       cursorline = true;
@@ -43,6 +43,7 @@
       fidget.enable = true;
 
       project-nvim.enable = true;
+      project-nvim.enableTelescope = true;
 
       lsp.enable = true;
       lsp.keymaps.lspBuf = {
@@ -67,7 +68,6 @@
 
       telescope.enable = true;
       telescope.extensions.fzf-native.enable = true;
-      telescope.extensions.project-nvim.enable = true;
 
       treesitter.enable = true;
       treesitter.indent = true;
