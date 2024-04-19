@@ -78,9 +78,14 @@
 
       cmp.enable = true;
       cmp.settings = {
+        sources = [
+          { name = "nvim_lsp"; }
+          { name = "path"; }
+          { name = "buffer"; }
+        ];
         mapping = {
-          "<c-k>" = "cmp.mapping.select_next_item()";
-          "<c-j>" = "cmp.mapping.select_prev_item()";
+          "<c-j>" = "cmp.mapping.select_next_item()";
+          "<c-k>" = "cmp.mapping.select_prev_item()";
           "<CR>" = "cmp.mapping.confirm({ select = true })";
         };
         formatting.format = ''function(entry, vim_item)
