@@ -55,7 +55,7 @@
           yubikey
           steam
           system
-          power-management
+          #power-management
 
           #wm.gnome
           wm.hyprland

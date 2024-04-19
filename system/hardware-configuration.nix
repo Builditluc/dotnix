@@ -9,6 +9,9 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ];
+
+  boot.kernelParams = [ "i915.force_probe=a720" ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/7d63fe70-703e-4be0-a6d5-3afee365558b";

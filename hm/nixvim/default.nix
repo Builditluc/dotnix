@@ -50,9 +50,9 @@
         "gr" = "references";
         "gd" = "definition";
         "gi" = "implementation";
-        "<leader>H" = "hover";
+        "K" = "hover";
         "<leader>rn" = "rename";
-        "<leader>ca" = "code_action";
+        "ca" = "code_action";
         "=" = "format";
       };
       lsp.servers = {
@@ -60,6 +60,8 @@
 
         rust-analyzer.enable = true;
         rust-analyzer.settings.check.command = "clippy";
+        rust-analyzer.installCargo = false;
+        rust-analyzer.installRustc = false;
 
         typst-lsp.enable = true;
         pyright.enable = true;
@@ -74,8 +76,8 @@
 
       rust-tools.enable = true;
 
-      nvim-cmp = {
-        enable = true;
+      cmp.enable = true;
+      cmp.settings = {
         mapping = {
           "<c-k>" = "cmp.mapping.select_next_item()";
           "<c-j>" = "cmp.mapping.select_prev_item()";
