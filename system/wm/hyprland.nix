@@ -11,8 +11,11 @@
 
   services.displayManager.sddm.autoNumlock = true;
 
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "builditluc";
+  #services.displayManager.autoLogin.enable = true;
+  #services.displayManager.autoLogin.user = "builditluc";
+
+  environment.systemPackages = with pkgs; [ where-is-my-sddm-theme ];
+  services.displayManager.sddm.theme = "where-is-my-sddm-theme";
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [
