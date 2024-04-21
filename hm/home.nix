@@ -9,6 +9,7 @@
     ./alacritty
     ./bash
     ./qutebrowser
+    ./btop
 
     ./waybar
     ./wofi
@@ -26,7 +27,6 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    btop
     typst
     typst-live
     tree
