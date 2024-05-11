@@ -69,7 +69,8 @@
   # Enable SANE scanner support
   hardware.sane.enable = true;
   services.ipp-usb.enable = true; # usb scanner
-  hardware.sane.extraBackends = [ pkgs.epkowa ];
+  hardware.sane.extraBackends = [ pkgs.sane-airscan pkgs.epkowa ];
+  hardware.sane.disableDefaultBackends = [ "escl" ];
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -86,7 +87,7 @@
   users.users.builditluc = {
     isNormalUser = true;
     description = "builditluc";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" ];
   };
 
   # Enable flakes support
