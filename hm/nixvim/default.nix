@@ -21,7 +21,9 @@
     colorschemes.gruvbox.enable = true; 
     colorschemes.gruvbox.settings.contrast_dark = "hard"; 
 
-    extraPlugins = with pkgs.vimPlugins; [ ultisnips go-nvim
+    extraPlugins = with pkgs.vimPlugins; [ 
+      ultisnips 
+      go-nvim
       vim-wakatime
       direnv-vim
     ];
@@ -75,6 +77,8 @@
       treesitter.indent = true;
 
       rust-tools.enable = true;
+
+      which-key.enable = true;
 
       cmp.enable = true;
       cmp.settings = {
