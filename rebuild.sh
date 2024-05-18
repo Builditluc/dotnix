@@ -15,6 +15,6 @@ rm nixos-switch.log
 current=$(nixos-rebuild list-generations | grep current)
 current_num=$(echo $current | awk '{print $1}')
 
-echo "git commit -m \"$current\""
+git commit -m \"$current\"
 
 notify-send "NixOS build of Generation $current_num was successful!"

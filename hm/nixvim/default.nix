@@ -38,8 +38,6 @@
 
     plugins = {
       nvim-autopairs.enable = true;
-      cmp-nvim-lsp.enable = true;
-      cmp-nvim-ultisnips.enable = true;
       typst-vim.enable = true;
 
       fidget.enable = true;
@@ -102,7 +100,14 @@
           return vim_item
         end
         '';
+        snippet.expand = ''function(args)
+          vim.fn["UltiSnips#Anon"](args.body)
+        end
+        '';
       };
+      cmp-nvim-lsp.enable = true;
+      cmp-nvim-ultisnips.enable = true;
+
 
       lualine.enable = true;
       lualine.theme = "gruvbox";

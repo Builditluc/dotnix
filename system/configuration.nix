@@ -70,7 +70,7 @@
   hardware.sane.enable = true;
   services.ipp-usb.enable = true; # usb scanner
   hardware.sane.extraBackends = [ pkgs.sane-airscan pkgs.epkowa ];
-  hardware.sane.disableDefaultBackends = [ "escl" ];
+  hardware.sane.disabledDefaultBackends = [ "escl" ];
 
   # Enable sound with pipewire.
   sound.enable = true;
