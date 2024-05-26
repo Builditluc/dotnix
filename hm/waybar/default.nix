@@ -8,36 +8,35 @@
       height = 30;
 
       modules-left = [ "hyprland/workspaces" ];
-      modules-center = [ "hyprland/window" ];
-      modules-right = [ "wireplumber" "battery" "clock" ];
-
-      "hyprland/window" = {
-        max-length = 200;
-        separate-outputs = true;
-      };
-
-      "hyprland/workspaces" = {
-        persistent-workspaces = {
-          "*" = 5;
-        };
-      };
+      modules-right = [ "tray" "pulseaudio" "battery" "clock" ];
 
       "clock" = {
-        interval = 60;
         format = "{:%H:%M %d/%m/%Y}";
+        interval = 60;
       };
 
       "battery" = {
         full-at = 80;
         states = {
-          warning = 20;
-          critical = 10;
+          warning = 30;
+          critical = 15;
         };
         format = "{icon} {capacity}%";
-        format-charging = "{icon} {capacity}% - {time}";
+        format-charging = "{icon} {capacity}%";
         format-full = "󱐋{icon} Charged";
-        format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+        format-icons = [ "" "" "" "" "" ];
         tooltip = false;
+      };
+
+      "pulseaudio" = {
+        scroll-step = 10;
+        on-click = "pavucontrol";
+        format = " {icon} {volume}% {format_source}";
+        format-muted = " {format_source}";
+        format-source = "";
+        format-source-muted = "";
+        format-bluetooth = "󰂯 {icon} {volume}% {format_source}";
+        format-bluetooth-muted = " 󰂯 {icon} {format_source}";
       };
     };
   };

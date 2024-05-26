@@ -1,10 +1,60 @@
+@define-color background #1d2021;
+@define-color foreground #ebdbb2;
+@define-color dim        #928374;
+@define-color yellow     #fabd2f;
+@define-color red        #fb4934;
+@define-color green      #b8bb26;
+
 * {
-	font-size: 12px;
-	font-family: "FiraCode Nerd Font";
-	font-weight:bold;
+  background: @background;
+  border: none;
+  border-radius: 0;
+  font-family: Input, "FiraCode Nerd Font";
+  font-size: 13px;
+  min-height: 0;
 }
 
 window#waybar {
-	background: #111111;
-	color: #fdf6e3;
+  background: @background;
+  color: @foreground;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  background: transparent;
+  color: @foreground;
+  border-top: 3px solid @background;
+  border-bottom: 3px solid transparent;
+}
+
+#workspaces button.active {
+  border-bottom: 3px solid @green;
+}
+
+#workspaces button.urgent {
+  border-bottom: 3px solid @yellow;
+}
+
+#battery.warning {
+  border-top: 3px solid @background;
+  border-bottom: 3px solid @yellow;
+}
+
+#battery.critical {
+  border-top: 3px solid @background;
+  border-bottom: 3px solid @red;
+}
+
+#battery.charging {
+  border-top: 3px solid @background;
+  border-bottom: 3px solid @green;
+}
+
+#pulseaudio,
+#battery,
+#clock {
+  padding: 0 6px;
+  margin: 0 6px;
 }
