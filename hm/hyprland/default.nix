@@ -12,6 +12,12 @@
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     "$terminal" = "alacritty";
+
+    general = {
+      gaps_in = 5;
+      gaps_out = 10;
+    };
+
     exec-once = [
       "hyprpaper"
       "dunst"
