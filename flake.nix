@@ -2,12 +2,11 @@
   description = "Builditluc's NixOS Configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
 
     utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
     
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nixvim.url = "github:nix-community/nixvim";
@@ -16,7 +15,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware";
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, utils, home-manager, nixvim, nixos-hardware }: 
+  outputs = inputs@{ self, nixpkgs, utils, home-manager, nixvim, nixos-hardware }: 
     utils.lib.mkFlake {
       inherit self inputs;
 
@@ -34,20 +33,8 @@
 
       channelsConfig = { 
         allowUnfree = true;
-        permittedInsecurePackages = [
-          #"electron-25.9.0"
-          #"nix-2.16.2"
-        ];
       };
 
-      channels.nixpkgs = {
-        input = nixpkgs;
-        overlaysBuilder = channels: [
-          (final: prev: { 
-            unstable = nixpkgs-unstable.legacyPackages.${prev.system}; 
-          })
-        ];
-      };
 
       hosts.ash = {
         system = "x86_64-linux";
@@ -57,7 +44,6 @@
           system
           #power-management
 
-          #wm.gnome
           wm.hyprland
 
           nixos-hardware.nixosModules.framework-13th-gen-intel
