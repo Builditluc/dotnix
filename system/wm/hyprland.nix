@@ -5,17 +5,12 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-
-  services.displayManager.sddm.autoNumlock = true;
-
-  #services.displayManager.autoLogin.enable = true;
-  #services.displayManager.autoLogin.user = "builditluc";
-
-  environment.systemPackages = with pkgs; [ where-is-my-sddm-theme ];
-  services.displayManager.sddm.theme = "where-is-my-sddm-theme";
+  services.greetd.enable = true;
+  services.greetd.restart = true;
+  services.greetd.settings = {
+    default_session.command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+    default_session.user = "builditluc";
+  };
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [

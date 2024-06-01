@@ -18,6 +18,9 @@
       gaps_out = 10;
     };
 
+    animations.enabled = false;
+    animations.first_launch_animation = false;
+
     exec-once = [
       "hyprpaper"
       "dunst"
