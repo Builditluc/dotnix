@@ -42,5 +42,6 @@
     strawberry
 
     bitwarden
+    rcu
   ];
 }
