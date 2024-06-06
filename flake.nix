@@ -42,7 +42,7 @@
           yubikey
           steam
           system
-          #power-management
+          power-management
 
           wm.hyprland
 

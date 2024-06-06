@@ -2,6 +2,8 @@
 
 {
   services.thermald.enable = true;
+
+  boot.extraModulePackages = with config.boot.kernelPackages; [ turbostat ];
   
   services.tlp.enable = true;
   services.tlp.settings = {
@@ -32,7 +34,8 @@
 
     INTEL_GPU_MIN_FREQ_ON_AC = 300;
     INTEL_GPU_MAX_FREQ_ON_AC = 1500;
-    INTEL_GPU_BOOST_FREQ_ON_AGC = 1500;
+    INTEL_GPU_BOOST_FREQ_ON_AC = 1500;
+
     INTEL_GPU_MIN_FREQ_ON_BAT = 100;
     INTEL_GPU_MAX_FREQ_ON_BAT = 800;
     INTEL_GPU_BOOST_FREQ_ON_BAT= 1000;
@@ -42,20 +45,20 @@
     #PCIE_PM_ON_AC = false;
     #PCIE_PM_ON_BAT = true;
 
-    WIFI_PWR_ON_AC = false;
-    WIFI_PWR_ON_BAT = false; # due to WiFi drop outs
-    WOL_DISABLE = true;
+    #WIFI_PWR_ON_AC = false;
+    #WIFI_PWR_ON_BAT = false; # due to WiFi drop outs
+    #WOL_DISABLE = true;
 
     DEVICES_TO_DISABLE_ON_STARTUP = "bluetooth wifi wwan";
     DEVICES_TO_DISABLE_ON_LAN_CONNECT = "wifi wwan";
     DEVICES_TO_DISABLE_ON_WIFI_CONNECT = "wwan";
     DEVICES_TO_DISABLE_ON_WWAN_CONNECT = "wifi";
 
-    USB_AUTOSUSPEND = true;
-    USB_EXCLUDE_AUDIO = true;
-    USB_EXCLUDE_BTUSB = false;
-    USB_EXCLUDE_PHONE = false;
-    USB_EXCLUDE_PRINTER = true;
-    USB_EXCLUDE_WWAN = false;
+    #USB_AUTOSUSPEND = true;
+    #USB_EXCLUDE_AUDIO = true;
+    #USB_EXCLUDE_BTUSB = false;
+    #USB_EXCLUDE_PHONE = false;
+    #USB_EXCLUDE_PRINTER = true;
+    #USB_EXCLUDE_WWAN = false;
   };
 }
