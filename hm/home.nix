@@ -43,5 +43,6 @@
 
     bitwarden
     rcu
+    thunderbird
   ];
 }

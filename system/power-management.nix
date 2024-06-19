@@ -3,8 +3,6 @@
 {
   services.thermald.enable = true;
 
-  boot.extraModulePackages = with config.boot.kernelPackages; [ turbostat ];
-  
   services.tlp.enable = true;
   services.tlp.settings = {
     TLP_DEFAULT_MODE = "BAT";
