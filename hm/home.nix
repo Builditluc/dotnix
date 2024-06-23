@@ -43,6 +43,8 @@
 
     bitwarden
     rcu
-    thunderbird
+
+    thunderbird gpgme
+    ferdium
   ];
 }

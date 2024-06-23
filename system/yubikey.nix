@@ -2,6 +2,7 @@
 {
   environment.systemPackages = with pkgs; [ 
     gnupg 
+    gpgme
     yubikey-personalization 
     yubikey-manager 
   ];
@@ -9,7 +10,7 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    pinentryPackage = pkgs.pinentry-curses;
+    #pinentryPackage = pkgs.pinentry-curses;
   };
 
   programs.ssh.startAgent = false;
