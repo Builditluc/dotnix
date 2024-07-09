@@ -43,8 +43,10 @@
 
     bitwarden
     rcu
+    lmstudio
 
     thunderbird gpgme
     ferdium
+    zathura
   ];
 }
