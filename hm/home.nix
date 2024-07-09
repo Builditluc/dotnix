@@ -10,6 +10,7 @@
     ./bash
     ./qutebrowser
     ./btop
+    ./xdg
 
     ./waybar
     ./wofi
