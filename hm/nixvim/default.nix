@@ -68,6 +68,7 @@
         typst-lsp.enable = true;
         pyright.enable = true;
         gopls.enable = true;
+        yamlls.enable = true;
       };
 
       telescope.enable = true;
