@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
     
@@ -15,7 +16,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware";
   };
 
-  outputs = inputs@{ self, nixpkgs, utils, home-manager, nixvim, nixos-hardware }: 
+  outputs = inputs@{ self, utils, home-manager, nixos-hardware, ... }: 
     utils.lib.mkFlake {
       inherit self inputs;
 
@@ -35,6 +36,9 @@
         allowUnfree = true;
       };
 
+      channels.nixpkgs.overlaysBuilder = channels: [
+        (final: prev: { unstable = inputs.nixpkgs-unstable.legacyPackages.${prev.system}; })
+      ];
 
       hosts.ash = {
         system = "x86_64-linux";

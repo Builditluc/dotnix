@@ -42,7 +42,7 @@
     lutris
     strawberry
 
-    bitwarden
+    unstable.bitwarden
     rcu
     lmstudio
 
