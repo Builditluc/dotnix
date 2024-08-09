@@ -41,10 +41,13 @@
     librewolf
     lutris
     strawberry
+    unstable.audacity
 
     unstable.bitwarden
     rcu
     lmstudio
+    syncthing
+    syncthingtray
 
     thunderbird gpgme
     ferdium

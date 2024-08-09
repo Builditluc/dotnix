@@ -1,0 +1,8 @@
+#!/bin/sh
+
+rcu \
+  --cli \
+  --autoconnect \
+  --upload-doc-to "$1" 8a47cfdc-73fc-4a31-9cf2-24b9877ec619
+
+notify-send "Uploaded Document to Calibre reMarkable Folder" --urgency=low
