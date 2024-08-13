@@ -41,7 +41,9 @@
     librewolf
     lutris
     strawberry
-    unstable.audacity
+    ffmpeg
+    yt-dlp
+    obs-studio
 
     unstable.bitwarden
     rcu
