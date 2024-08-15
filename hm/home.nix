@@ -44,6 +44,7 @@
     ffmpeg
     yt-dlp
     obs-studio
+    unstable.codecrafters-cli
 
     unstable.bitwarden
     rcu
