@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 { 
   home.packages = with pkgs; [
     brightnessctl
@@ -16,6 +16,7 @@
     general = {
       gaps_in = 5;
       gaps_out = 10;
+      layout = "master";
     };
 
     animations.enabled = false;
@@ -91,6 +92,12 @@
       "eDP-1, preferred, auto, 1"
       "DP-3,  preferred, auto, 1"
     ];
+
+    master = {
+      orientation = "center";
+      always_center_master = true;
+    };
+
     input.touchpad.natural_scroll = true;
     input.touchpad.clickfinger_behavior = true;
     input.kb_options = "compose:caps";
