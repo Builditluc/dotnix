@@ -63,13 +63,13 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
-  services.printing.drivers = [ pkgs.hplip ];
+  #services.printing.enable = true;
+  #services.printing.drivers = [ pkgs.hplip ];
 
   # Enable SANE scanner support
   hardware.sane.enable = true;
   services.ipp-usb.enable = true; # usb scanner
-  hardware.sane.extraBackends = [ pkgs.sane-airscan pkgs.epkowa ];
+  hardware.sane.extraBackends = [ pkgs.epkowa ];
   hardware.sane.disabledDefaultBackends = [ "escl" ];
 
   # Enable sound with pipewire.
