@@ -24,9 +24,6 @@
   boot.initrd.luks.devices."luks-8f57f477-cd2b-400d-9bb6-c2191628ceaa".device = "/dev/disk/by-uuid/8f57f477-cd2b-400d-9bb6-c2191628ceaa";
   networking.hostName = "ash";
 
-  boot.plymouth.enable = true;
-  boot.plymouth.theme = "breeze";
-
   # Bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
@@ -66,7 +63,6 @@
   hardware.sane.disabledDefaultBackends = [ "escl" ];
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

@@ -7,7 +7,7 @@ git diff --staged
 
 echo "building NixOS Configuration"
 
-sudo nixos-rebuild switch --flake .# --log-format internal-json -v |& nom --json
+sudo nixos-rebuild switch --flake .# --log-format internal-json -v --max-jobs 5 |& nom --json
 
 current=$(nixos-rebuild list-generations | grep current)
 current_num=$(echo $current | awk '{print $1}')

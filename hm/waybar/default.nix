@@ -8,11 +8,16 @@
       height = 30;
 
       modules-left = [ "hyprland/workspaces" ];
-      modules-right = [ "tray" "network" "pulseaudio" "battery" "clock" ];
+      modules-right = [ "tray" "custom/vpn" "pulseaudio" "battery" "clock" ];
 
       "clock" = {
         format = "{:%H:%M %d/%m/%Y}";
         interval = 60;
+      };
+
+      "custom/vpn" = {
+        exec = "$HOME/dotnix/hm/waybar/vpn.sh";
+        interval = 1;
       };
 
       "network" = {

@@ -27,7 +27,7 @@
 
   # u2f PAM
   security.pam.services = {
-    login.u2fAuth = true; # users in $HOME/.config/Yubico/u2f_keys can log in 
+    #login.u2fAuth = true; # users in $HOME/.config/Yubico/u2f_keys can log in 
     sudo.u2fAuth = true;  # with U2F Key(s)
   };
 

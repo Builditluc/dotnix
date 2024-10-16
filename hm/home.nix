@@ -46,10 +46,10 @@
     ffmpeg
     yt-dlp
     obs-studio
-    unstable.codecrafters-cli
+    codecrafters-cli
 
-    unstable.bitwarden
-    rcu
+    bitwarden
+    #rcu
     lmstudio
     syncthing
     syncthingtray

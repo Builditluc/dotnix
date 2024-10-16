@@ -52,6 +52,8 @@ window#waybar {
   border-bottom: 3px solid @green;
 }
 
+#custom-vpn,
+#network,
 #pulseaudio,
 #battery,
 #clock {

@@ -2,15 +2,14 @@
   description = "Builditluc's NixOS Configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/5633bcff0c6162b9e4b5f1264264611e950c8ec7";
 
     utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
 
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixvim.url = "github:nix-community/nixvim/nixos-24.05";
+    nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
@@ -31,15 +30,12 @@
         system = import ./system/configuration.nix;
         power-management = import ./system/power-management.nix;
         networking = import ./system/networking.nix;
+        ly = import ./system/ly.nix;
       };
 
       channelsConfig = { 
         allowUnfree = true;
       };
-
-      channels.nixpkgs.overlaysBuilder = channels: [
-        (final: prev: { unstable = inputs.nixpkgs-unstable.legacyPackages.${prev.system}; })
-      ];
 
       hosts.ash = {
         system = "x86_64-linux";
@@ -49,6 +45,7 @@
           system
           power-management
           networking
+          ly
 
           wm.hyprland
 
