@@ -6,7 +6,7 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
-    
+
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -30,6 +30,7 @@
         steam = import ./system/steam.nix;
         system = import ./system/configuration.nix;
         power-management = import ./system/power-management.nix;
+        networking = import ./system/networking.nix;
       };
 
       channelsConfig = { 
@@ -47,6 +48,7 @@
           steam
           system
           power-management
+          networking
 
           wm.hyprland
 

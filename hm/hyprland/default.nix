@@ -25,6 +25,7 @@
     exec-once = [
       "hyprpaper"
       "dunst"
+      "nm-applet"
     ];
     bindl = [
       ", switch:Lid Switch, exec,  ~/dotnix/hm/hyprland/lid-switch.sh"

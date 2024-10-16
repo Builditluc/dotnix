@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -15,10 +15,6 @@
   systemd.sleep.extraConfig = ''
     HibernateDelaySec=20m
   '';
-
-  # firewall
-  networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 8083 9090 ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -38,9 +34,6 @@
 
   # Enable thunderbolt support
   services.hardware.bolt.enable = true;
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   services.fwupd.enable = true;
 

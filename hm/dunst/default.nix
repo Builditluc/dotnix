@@ -7,7 +7,7 @@
     global = {
       follow = "keyboard";
       notification_limit = 3;
-      origin = "top-center";
+      origin = "top-right";
       layer = "overlay";
       font = "FiraCode Nerd Font 8";
     };

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   programs.waybar.enable = true;
   programs.waybar.settings = {
@@ -8,11 +8,20 @@
       height = 30;
 
       modules-left = [ "hyprland/workspaces" ];
-      modules-right = [ "tray" "pulseaudio" "battery" "clock" ];
+      modules-right = [ "tray" "network" "pulseaudio" "battery" "clock" ];
 
       "clock" = {
         format = "{:%H:%M %d/%m/%Y}";
         interval = 60;
+      };
+
+      "network" = {
+          format = "{ifname}";
+          format-wifi = " {essid}";
+          format-ethernet = " {ifname}";
+          format-disconnected = "";
+          tooltip-format-wifi = "{signalStrength}%";
+          max-length = 20;
       };
 
       "battery" = {

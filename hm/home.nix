@@ -3,6 +3,8 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
 
+    ./nm
+
     ./nixvim
     ./git
     ./direnv
@@ -51,6 +53,7 @@
     lmstudio
     syncthing
     syncthingtray
+    nix-output-monitor
 
     thunderbird gpgme
     ferdium
